@@ -1,20 +1,21 @@
-# Sounak Chakraborty - Portfolio
+# Sounak Chakraborty - Portfolio (Persona 5 Edition)
 
-A modern, responsive portfolio website built with React 18, Tailwind CSS, and Framer Motion featuring stunning animated backgrounds and smooth interactions.
+A highly stylized, aggressive, and immersive portfolio website built with React 18, Tailwind CSS, and Framer Motion. The entire design system is heavily inspired by the UI/UX of **Persona 5**, featuring distinctive angular geometry, aggressive color blocking (Red/Black/White), staggering typography, and dynamic micro-interactions.
 
-![Portfolio Preview](https://img.shields.io/badge/React-18-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-teal) ![Vite](https://img.shields.io/badge/Vite-5-purple)
+![React](https://img.shields.io/badge/React-18-red?style=for-the-badge&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-black?style=for-the-badge&logo=tailwindcss)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-red?style=for-the-badge&logo=framer)
+![Vite](https://img.shields.io/badge/Vite-5-black?style=for-the-badge&logo=vite)
 
-## ✨ Features
+## ✨ P5 Aesthetic Features
 
-- **Animated Backgrounds** - Liquid Ether WebGL shader animations
-- **Pill Navigation** - Smooth GSAP-animated navigation bar
-- **Typewriter Effect** - Animated name reveal on hero section
-- **Scroll Animations** - Framer Motion powered reveal effects
-- **Responsive Design** - Mobile-first approach with Tailwind CSS
-- **Dark Theme** - Elegant black & white color scheme
-- **Project Showcase** - Interactive cards with animated counters
-- **Timeline Education** - Scroll-triggered education timeline
-- **Contact Section** - Direct links with hover animations
+- **"Take Your Time" Boot Sequence** - Animated diagonal wipe loading screen with progress tracking
+- **Dynamic Geometric UI** - Extensive use of `clip-path` and `transform: skewX()` for an aggressive, paper-cut look
+- **All-Out Attack Transitions** - Full-viewport red/black diagonal wipes when navigating sections
+- **Tactile Sound Design** - Integrated WebAudio API synthesizing custom UI sounds (clicks, menu snaps, heavy slams)
+- **Cinematic Textures** - Global SVG film grain overlay and halftone patterns for a raw, printed manga feel
+- **Custom Diamond Cursor** - Reactive cursor that morphs into P5 chevron arrows on hover and spawns halftone click ripples
+- **Dossier Data Layouts** - Projects and skills presented as "Top Secret" intelligence files with classification stamps
 
 ## 🚀 Tech Stack
 
@@ -22,8 +23,8 @@ A modern, responsive portfolio website built with React 18, Tailwind CSS, and Fr
 |----------|-------------|
 | **Framework** | React 18 |
 | **Styling** | Tailwind CSS 3 |
-| **Animations** | Framer Motion, GSAP |
-| **Graphics** | OGL (WebGL) |
+| **Animations** | Framer Motion |
+| **Data Viz** | Recharts (Radar stats) |
 | **Build Tool** | Vite 5 |
 | **Icons** | Lucide React |
 
@@ -43,69 +44,42 @@ npm install
 npm run dev
 ```
 
-## 🔧 Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
-
 ## 📁 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── Navbar.jsx      # Pill navigation bar
-│   ├── Hero.jsx        # Landing section with Liquid Ether bg
-│   ├── About.jsx       # Bio and skills grid
-│   ├── Projects.jsx    # Project showcase cards
-│   ├── Education.jsx   # Timeline education section
-│   ├── Contact.jsx     # Contact information
-│   ├── Footer.jsx      # Footer with links
-│   ├── PillNav.jsx     # Animated pill navigation
-│   └── LiquidEther.jsx # WebGL background animation
+│   ├── Navbar.jsx        # P5 skewed navigation + mobile all-out attack menu
+│   ├── Hero.jsx          # Wanted poster profile + giant typography slam
+│   ├── About.jsx         # Intelligence report layout
+│   ├── Skills.jsx        # Radar chart + classification badges
+│   ├── Projects.jsx      # Expandable dossier cards
+│   ├── Education.jsx     # Angular timeline cards
+│   ├── Contact.jsx       # Secure channel links
+│   ├── Footer.jsx        # Mission Accomplished banner
+│   ├── CustomCursor.jsx  # Diamond cursor with click ripples
+│   └── CallingCardText.jsx # Randomized letter rotation utility
 ├── utils/
-│   ├── constants.js    # Personal info, projects, education
-│   └── animations.js   # Framer Motion variants
-├── App.jsx             # Main app with error boundary
-├── main.jsx            # React entry point
-└── index.css           # Global styles & Tailwind
+│   ├── constants.js      # Single source of truth for all portfolio data
+│   └── sounds.js         # WebAudio synth generators for UI sounds
+├── App.jsx               # Main container + Parallax backgrounds + Loading screen
+├── main.jsx              # React entry point
+└── index.css             # Global P5 design system & keyframes
 ```
 
 ## 🎨 Customization
 
-### Personal Information
-Edit `src/utils/constants.js` to update:
-- Name, tagline, contact info
-- Skills and categories
-- Projects with descriptions
-- Education timeline
-
-### Colors
-Modify `src/index.css` for the color scheme. Current theme uses a minimal black & white palette with subtle gradients.
-
-### Background Animation
-Customize the Liquid Ether background in `Hero.jsx`:
-```jsx
-<LiquidEther
-  speed={0.4}           // Animation speed
-  colors={['#1a1a2e', '#0d0d0d', '#111111']}
-/>
-```
+All personal data is centralized in `src/utils/constants.js`. To make this your own portfolio, simply edit that file:
+- **`PERSONAL_INFO`**: Name, tagline, contact links, resume
+- **`SKILLS`**: Arrays of skills mapped to categories
+- **`PROJECTS`**: Array of project objects (supports tech stack tags and features)
+- **`EDUCATION`**: Academic history
 
 ## 🌐 Deployment
 
-### Netlify
-1. Push code to GitHub
-2. Go to [Netlify](https://app.netlify.com)
-3. Click "Add new site" → "Import from Git"
-4. Connect your repository
-5. Set build command: `npm run build`
-6. Set publish directory: `dist`
-7. Deploy!
+This project is configured for seamless deployment on platforms like Netlify or Vercel.
 
-### Vercel
+**Vercel Quick Deploy:**
 ```bash
 npm run build
 npx vercel --prod
@@ -119,5 +93,5 @@ MIT License - feel free to use this template for your own portfolio!
 
 **Sounak Chakraborty**
 - GitHub: [@krypton-arch](https://github.com/krypton-arch)
-- LinkedIn: [sounakc](https://www.linkedin.com/in/sounakc/)
-- Email: sounakchakraborty371@gmail.com
+- LinkedIn: [sounak-chakraborty](https://www.linkedin.com/in/sounak-chakraborty)
+- Portfolio: [sounakdev.netlify.app](https://sounakdev.netlify.app/)
